@@ -1,0 +1,67 @@
+{
+    "pages": [
+        {
+            "path": "pages/index/index",
+            "style": {
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/books/index",
+            "style": {
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/search/index",
+            "style": {
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/me/info",
+            "style": {
+                "enablePullDownRefresh": true
+            }
+        }
+    ],
+    "globalStyle": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#000000",
+        "backgroundColorTop": "#000000",
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTitleText": "多看小说网"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#d22222",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "书架",
+                "iconPath": "static/assets/icon/my_book.png",
+                "selectedIconPath": "static/assets/icon/select_my_book.png"
+            },
+            {
+                "pagePath": "pages/books/index",
+                "text": "书城",
+                "iconPath": "static/assets/icon/book.png",
+                "selectedIconPath": "static/assets/icon/select_book.png"
+            },
+            {
+                "pagePath": "pages/search/index",
+                "text": "搜索",
+                "iconPath": "static/assets/icon/search.png",
+                "selectedIconPath": "static/assets/icon/select_search.png"
+            },
+            {
+                "pagePath": "pages/me/info",
+                "text": "我的",
+                "iconPath": "static/assets/icon/me.png",
+                "selectedIconPath": "static/assets/icon/select_me.png"
+            }
+        ]
+    }
+}
