@@ -1,13 +1,13 @@
 {
     "pages": [
         {
-            "path": "pages/index/index",
+            "path": "pages/books/index",
             "style": {
                 "enablePullDownRefresh": true
             }
         },
         {
-            "path": "pages/books/index",
+            "path": "pages/books/bookshelf",
             "style": {
                 "enablePullDownRefresh": true
             }
@@ -19,9 +19,61 @@
             }
         },
         {
-            "path": "pages/me/info",
+            "path": "pages/me/center",
+            "style": {
+                "enablePullDownRefresh": true,
+                "navigationBarTitleText": "个人中心"
+            }
+        },
+        {
+            "path": "pages/books/detail",
             "style": {
                 "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/books/reader",
+            "style": {
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/auth/login",
+            "style": {
+                "backgroundColor": "#f5f6f8",
+                "navigationBarTitleText": "登录",
+                "app-plus": {
+                }
+            }
+        },
+        {
+            "path": "pages/auth/find-pwd",
+            "style": {
+                "navigationBarTitleText": "找回密码"
+            }
+        },
+        {
+            "path": "pages/auth/reg",
+            "style": {
+                "navigationBarTitleText": "注册"
+            }
+        },
+        {
+            "path": "pages/auth/reg-pwd",
+            "style": {
+                "navigationBarTitleText": "注册"
+            }
+        },
+        {
+            "path": "pages/books/list",
+            "style": {
+                "navigationBarTitleText": ""
+            }
+        },
+        {
+            "path": "pages/books/chapters",
+            "style": {
+                "navigationBarTitleText": ""
             }
         }
     ],
@@ -38,29 +90,30 @@
         "backgroundColor": "#fff",
         "borderStyle": "black",
         "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "书架",
-                "iconPath": "static/assets/icon/my_book.png",
-                "selectedIconPath": "static/assets/icon/select_my_book.png"
-            },
+
             {
                 "pagePath": "pages/books/index",
-                "text": "书城",
-                "iconPath": "static/assets/icon/book.png",
-                "selectedIconPath": "static/assets/icon/select_book.png"
+                "text": "首页",
+                "iconPath": "static/images/book.png",
+                "selectedIconPath": "static/images/select_book.png"
+            },
+            {
+                "pagePath": "pages/books/bookshelf",
+                "text": "书架",
+                "iconPath": "static/images/my_book.png",
+                "selectedIconPath": "static/images/select_my_book.png"
             },
             {
                 "pagePath": "pages/search/index",
                 "text": "搜索",
-                "iconPath": "static/assets/icon/search.png",
-                "selectedIconPath": "static/assets/icon/select_search.png"
+                "iconPath": "static/images/search.png",
+                "selectedIconPath": "static/images/select_search.png"
             },
             {
-                "pagePath": "pages/me/info",
+                "pagePath": "pages/me/center",
                 "text": "我的",
-                "iconPath": "static/assets/icon/me.png",
-                "selectedIconPath": "static/assets/icon/select_me.png"
+                "iconPath": "static/images/me.png",
+                "selectedIconPath": "static/images/select_me.png"
             }
         ]
     }

@@ -1,5 +1,5 @@
 {
-  "name": "book_test",
+  "name": "book_frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -39,12 +39,14 @@
     "@vue/cli-plugin-babel": "3.3.0",
     "@vue/cli-service": "^3.5.0",
     "babel-plugin-import": "^1.11.0",
-    "vue-template-compiler": "^2.5.21",
-    "weex-vue-loader": "^0.7.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0",
     "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0"
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21",
+    "weex-vue-loader": "^0.7.0"
   },
   "browserslist": [
     "last 3 versions",
