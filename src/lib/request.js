@@ -10,9 +10,7 @@ let getRequest = async (api, params = {}, headers = {}, auth = false) => {
     if (!api) {
         return false;
     }
-    console.log(auth)
     if (auth !== false) {
-
         headers = {
             'Authorization': auth.token_type + ' ' + auth.access_token,
             ...headers

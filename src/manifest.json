@@ -1,6 +1,6 @@
 {
     "name" : "多看小说",
-    "appid" : "wxac710aa8f31b1219",
+    "appid" : "__UNI__wxac710aa8f31b1219",
     "description" : "多看小说",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -12,32 +12,6 @@
         "router" : {
             "mode" : "history",
             "base" : "h5"
-        },
-        "devServer" : {
-            "disableHostCheck" : true,
-            "proxy" : {
-                "/apiquan/api" : {
-                    "target" : "https://apiquan.ithome.com",
-                    "changeOrigin" : true,
-                    "pathRewrite" : {
-                        "^/apiquan" : ""
-                    }
-                },
-                "/api" : {
-                    "target" : "https://api.ithome.com",
-                    "changeOrigin" : true,
-                    "pathRewrite" : {
-                        "^/api" : ""
-                    }
-                },
-                "/dyn" : {
-                    "target" : "https://dyn.ithome.com",
-                    "changeOrigin" : true,
-                    "pathRewrite" : {
-                        "^/dyn" : ""
-                    }
-                }
-            }
         },
         "title" : "book",
         "domain" : "www.duokanxiaoshuo.site"
@@ -85,7 +59,7 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 小程序特有相关 */
-        "appid" : "",
+        "appid" : "wxac710aa8f31b1219",
         "setting" : {
             "urlCheck" : true
         }

@@ -55,7 +55,7 @@
 		data() {
 			return {
 				login: false,
-				avatarUrl: "/static/images/uni-center/logo.png",
+				avatarUrl: "/static/images/logo.png",
 			}
 		},
         onShow() {

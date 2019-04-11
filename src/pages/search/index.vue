@@ -72,7 +72,9 @@
             mSearch
         },
         onReachBottom() {
-            console.log('onReachBottom')
+            if (!this.keyword) {
+                return false
+            }
             if (this.currentPage >= this.pagination.total_pages) {
                 this.loadingType = 'noMore'
                 return false
