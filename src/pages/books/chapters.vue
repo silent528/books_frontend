@@ -4,7 +4,7 @@
         <scroll-view class="list" scroll-y @scrolltolower="loadMore()">
             <view class="uni-list uni-collapse uni-active margin">
                 <view class="uni-list-cell" v-for="(chapter,index) in chapters" :key="index">
-                    <view class="uni-list-cell-navigate uni-navigate-right" @click="reader(bookId, chapter.chapter_number)">{{ chapter.name }}</view>
+                    <view class="uni-list-cell-navigate uni-navigate-right" @click="reader(bookId, chapter.chapter_order)">{{ chapter.name }}</view>
                 </view>
             </view>
             <view class="uni-tab-bar-loading uni-bg-white">

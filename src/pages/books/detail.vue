@@ -8,7 +8,10 @@
                 <view class="uni-media-list-text-bottom margin">分类: {{ category.name }}</view>
                 <view class="uni-media-list-text-bottom margin">
                     <view>
-                        <button class="mini-btn" :disabled="isFavorite" type="default" size="mini" @click="favorite(book.id)">加入书架</button>
+                        <button class="mini-btn" :disabled="isFavorite" type="default" size="mini" @click="favorite(book.id)">
+                            <view v-if="!isFavorite">加入书架</view>
+                            <view v-if="isFavorite">已加入书架</view>
+                        </button>
                         <button class="mini-btn" type="primary" size="mini" @click="reader(book.id, 1)">立即阅读</button>
                     </view>
 
@@ -84,8 +87,8 @@
         },
         onLoad : async function(event) {
             this.bookId = event.bookId
+            this.getBookOperation(this.bookId)
             await this.getBookDetail(this.bookId)
-            await this.getBookOperation(this.bookId)
             this.category = this.book.category
             this.author = this.book.author
         },
@@ -102,6 +105,8 @@
                 if (this.$store.state.Auth.logged) {
                     let res = await api.getOperation(id, this.$store.state.Auth.auth)
                     this.isFavorite = res.data.favorite
+                } else {
+                    this.isFavorite = false
                 }
             },
             reader: function (id, chapterId) {
@@ -142,8 +147,7 @@
     }
     .book-desc{
         text-align: left;
-        padding-left: 11px;
-        padding-top: 5px;
+        padding: 11upx;
     }
     button {
         margin-top: 15upx;
