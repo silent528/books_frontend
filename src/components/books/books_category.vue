@@ -5,21 +5,21 @@
         </view>
         <view>
             <view class="uni-flex uni-row category" style="flex-wrap: wrap;">
-                <view class="text" style="width: 280upx;" v-for="(category,index) in categories" :key="index" @click="goBookList(category.id)">
-                    <view v-if="category.gender === 1" style="margin: 30upx;">{{ category.name }}</view>
+                <view class="text" style="width: 280upx;" v-for="(category,id) in manCategories"     @click="goBookList(id)">
+                    <view style="margin: 30upx;">{{ category }} </view>
                 </view>
             </view>
         </view>
-        <view class="title ">
-            女频
-        </view>
-        <view>
-            <view class="uni-flex uni-row category" style="flex-wrap: wrap;">
-                <view class="text" style="width: 280upx;" v-for="(category,index) in categories" :key="index" @click="goBookList(category.id)">
-                    <view v-if="category.gender === 0" style="margin: 30upx;">{{ category.name }}</view>
-                </view>
-            </view>
-        </view>
+        <!--<view class="title ">-->
+            <!--女频-->
+        <!--</view>-->
+        <!--<view>-->
+            <!--<view class="uni-flex uni-row category" style="flex-wrap: wrap;">-->
+                <!--<view class="text" style="width: 280upx;" v-for="(category,index) in categories" :key="index" @click="goBookList(category.id)">-->
+                    <!--<view v-if="category.gender === 0" style="margin: 30upx;">{{ category.name }}</view>-->
+                <!--</view>-->
+            <!--</view>-->
+        <!--</view>-->
     </view>
 </template>
 <script>
@@ -27,12 +27,13 @@
     export default {
         data() {
             return {
-                categories: [],
+                manCategories: {},
             }
         },
         created: async function() {
             // 获取分类
-            this.categories = await this.getCategories()
+            let categories = await this.getCategories()
+            this.manCategories = categories.man
         },
         methods: {
             // 需要缓存
