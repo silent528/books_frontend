@@ -4,8 +4,8 @@
             <image class="book-detil-logo" :src="book.cover_url"></image>
             <view class="uni-media-list-body" style="margin: 10px 10px;">
                 <view class="uni-media-list-text-top margin">{{ book.name }}</view>
-                <view class="uni-media-list-text-bottom margin">作者: {{ author.name }}</view>
-                <view class="uni-media-list-text-bottom margin">分类: {{ category.name }}</view>
+                <view class="uni-media-list-text-bottom margin">作者: {{ book.author_name }}</view>
+                <view class="uni-media-list-text-bottom margin">分类: {{ book.category_name }}</view>
                 <view class="uni-media-list-text-bottom margin">
                     <view>
                         <button class="mini-btn" :disabled="isFavorite" type="default" size="mini" @click="favorite(book.id)">
@@ -59,6 +59,8 @@
 <script>
     import uniIcon from '@/components/uni-icon/uni-icon.vue'
     import api from '@/lib/api'
+    import { mapState, mapActions, mapGetters} from 'vuex'
+
     export default {
         components: {
             uniIcon
@@ -68,7 +70,6 @@
                 bookId: 1,
                 book: {},
                 author: {},
-                category: {},
                 comment: [],
                 config: {
                     sites: ['qzone', 'qq', 'weibo','wechat', 'douban'],
@@ -89,8 +90,11 @@
             this.bookId = event.bookId
             this.getBookOperation(this.bookId)
             await this.getBookDetail(this.bookId)
-            this.category = this.book.category
             this.author = this.book.author
+        },
+        computed: {
+            ...mapGetters('Auth', ['logged']),
+            ...mapGetters('Auth', ['auth'])
         },
         methods: {
             getBookDetail: async function (id) {
@@ -98,12 +102,13 @@
                 if (ret === false) {
                     return
                 }
+
                 this.book = ret.data
             },
             // 登录状态下判断小说可操作清单
             async getBookOperation(id) {
                 if (this.$store.state.Auth.logged) {
-                    let res = await api.getOperation(id, this.$store.state.Auth.auth)
+                    let res = await api.getOperation(id, this.auth)
                     this.isFavorite = res.data.favorite
                 } else {
                     this.isFavorite = false

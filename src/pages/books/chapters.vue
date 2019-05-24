@@ -3,8 +3,8 @@
         <view class="title" style="color:#0bb20c;">{{ bookName }}</view>
         <scroll-view class="list" scroll-y @scrolltolower="loadMore()">
             <view class="uni-list uni-collapse uni-active margin">
-                <view class="uni-list-cell" v-for="(chapter,index) in chapters" :key="index">
-                    <view class="uni-list-cell-navigate uni-navigate-right" @click="reader(bookId, chapter.chapter_order)">{{ chapter.name }}</view>
+                <view class="uni-list-cell" v-for="(name, order ) in chapters">
+                    <view class="uni-list-cell-navigate uni-navigate-right" @click="reader(bookId, order)">{{ name }}</view>
                 </view>
             </view>
             <view class="uni-tab-bar-loading uni-bg-white">
@@ -56,7 +56,7 @@
                 this.loadingType = 'loading'
                 this.currentPage = this.currentPage + 1
                 let chapters = await this.getChapters(this.bookId, this.currentPage)
-                this.chapters = this.chapters.concat(chapters)
+                this.chapters = Object.assign({}, this.chapters, chapters)
                 this.loadingType = 'more'
             },
             getChapters: async function(bookId, page) {

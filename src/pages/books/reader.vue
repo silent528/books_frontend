@@ -29,7 +29,7 @@
         },
         methods: {
             getChapter: async (id, chapterId) => {
-                let ret = await api.getLastChapter(id, chapterId)
+                let ret = await api.getChapterDetail(id, chapterId)
                 if (ret === false) {
                     return null
                 }

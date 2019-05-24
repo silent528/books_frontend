@@ -52,8 +52,10 @@
             }
         },
         onLoad: async function() {
+            // console.log(uni.request({url: 'http://www.baidu.com'}))
             let h = await this.getSystemInfo()
             let scrollHeight = h[1].windowHeight
+            console.log(scrollHeight)
             this.height = (scrollHeight) + 'px'
         },
         methods: {
@@ -114,7 +116,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .swiper-tab-list {
         width: 33.33%;
     }
